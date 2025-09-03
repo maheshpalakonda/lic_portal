@@ -23,24 +23,6 @@ CREATE TABLE policies (
     bonus VARCHAR(255)
 ); 
 
-INSERT INTO users (username, email, password, role)
-VALUES (
-    'myadmin',
-    'admin@example.com',
-    '$2a$10$CwTycUXWue0Thq9StjUM0uJ8zJ2uO/h7dJZfXa7gTnFj6tW3Qx2Vu',
-    'admin'
-)
-ON DUPLICATE KEY UPDATE role='admin';
-
-CREATE TABLE policies (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    minAge INT NOT NULL,
-    maxAge INT NOT NULL,
-    description TEXT,
-    rateTable JSON,
-    bonus VARCHAR(255)
-);
 
 INSERT INTO policies (name, minAge, maxAge, description, rateTable, bonus) VALUES
 ('LIC\'s New Endowment Plan', 18, 55, 'A classic plan for savings and protection.', JSON_OBJECT("20", 45.50, "25", 35.80), 'Reversionary Bonus'),
