@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "📥 Cloning repo..."
-                git branch: 'main', url: 'https://github.com/maheshpalakonda/lic_portal.git'
+                git branch: 'master', url: 'https://github.com/maheshpalakonda/lic_portal.git'
             }
         }
 
